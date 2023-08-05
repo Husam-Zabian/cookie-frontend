@@ -16,7 +16,7 @@ export default function ReportTable({report}){
                         Location
                     </th>  
                     {h.map(item => (
-                       <th className="p-2">{item}</th>
+                       <th key={item.id} className="p-2">{item}</th>
                     ))}
                     <th className="p-2">
                         Totals
@@ -27,12 +27,12 @@ export default function ReportTable({report}){
                 </thead>
                 <tbody className="bg-green-300">
                     {report.map(item => (
-                       <tr className="p-2">
+                       <tr key={item.id} className="p-2">
                        <td>
                         {item.Location}
                        </td>
                         {item.random.map(item2 => (
-                        <td>{[item2]}</td>
+                        <td key={item.id}>{[item2]}</td>
                         ))}
                         <td>
                             {item.Total}
